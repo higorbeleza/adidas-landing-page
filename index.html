@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Adidas</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">adidas</a>
+
+        <nav class="navbar">
+            <a href="#">home</a>
+            <a href="#">about</a>
+            <a href="#">category</a>
+            <a href="#">products</a>
+            <a href="#">blogs</a>
+        </nav>
+    </header>
+    <section class="container">
+        <div class="content">
+            <h3>new adidas shoes</h2>
+            <p>
+                Lorem ipsum dolor sit amet 
+                consectetur adipisicing elit. 
+                Atque omnis quod ea recusandae 
+                ut amet molestiae laborum rem 
+                soluta sit.
+            </p>
+            <a href="#" class=" btn">add to cart</a>
+        </div>
+        <div class="image">
+            <img class="shoes active" src="images/132-0348-008_zoom1.webp">
+            <img class="shoes" src="images/D13-7856-036_zoom1.webp">
+            <img class="shoes" src="images/NQQ-0375-010_zoom1.webp">
+        </div>
+        <div class="left" onclick="prev()"><</div>
+        <div class="right" onclick="next()">></div>
+    </section>
+
+
+    <script>
+        let shoes = document.querySelectorAll('.shoes');
+        let index = 0;
+
+        function next(){
+            shoes[index].classList.remove('active');
+            index = (index + 1) % shoes.length;
+            shoes[index].classList.add('active');
+        }
+        function prev(){
+            shoes[index].classList.remove('active');
+            index = (index - 1 + shoes.length) % shoes.length;
+            shoes[index].classList.add('active');
+        }
+
+    </script>
+</body>
+</html>
